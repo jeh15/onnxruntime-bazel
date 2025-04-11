@@ -10,8 +10,8 @@ Add the following to your `MODULE` file:
 bazel_dep(name = "onnxruntime-bazel")
 archive_override(
     module_name = "onnxruntime-bazel",
-    strip_prefix = "onnxruntime-bazel",
-    urls = "https://github.com/jeh15/onnxruntime-bazel/archive/refs/heads/main.zip"
+    strip_prefix = "onnxruntime-bazel-main",
+    urls = ["https://github.com/jeh15/onnxruntime-bazel/archive/refs/heads/main.zip"],
 )
 ```
 
