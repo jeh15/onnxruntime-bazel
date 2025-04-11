@@ -1,0 +1,20 @@
+"""
+    # Bazel Module to fetch compiled onnxruntime releases
+"""
+
+module(
+    name = "onnxruntime-bazel",
+)
+
+# platforms:
+bazel_dep(name = "platforms", version = "0.0.11")
+
+# cc rules:
+bazel_dep(name = "rules_cc", version = "0.0.2")
+
+# onnxruntime extension:
+onnxruntime_x86_64_extension = use_extension("//third_party:extensions.bzl", "onnxruntime_x86_64_extension")
+use_repo(onnxruntime_x86_64_extension, "archive_onnxruntime_x86_64")
+
+onnxruntime_aarch64_extension = use_extension("//third_party:extensions.bzl", "onnxruntime_aarch64_extension")
+use_repo(onnxruntime_aarch64_extension, "archive_onnxruntime_aarch64")
