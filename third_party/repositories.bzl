@@ -35,6 +35,18 @@ cc_import(
     includes = ["include"],
     shared_library = "lib/libonnxruntime.so.{version}",
 )
+cc_import(
+    name = "onnxruntime_lib_import_1",
+    hdrs = hdrs,
+    includes = ["include"],
+    shared_library = "lib/libonnxruntime.so.1",
+)
+cc_import(
+    name = "onnxruntime_lib_import_providers_shared",
+    hdrs = hdrs,
+    includes = ["include"],
+    shared_library = "lib/libonnxruntime_providers_shared.so",
+)
 cc_library(
     name = "onnxruntime_lib_{cpu_platform}",
     hdrs = hdrs,
@@ -43,6 +55,8 @@ cc_library(
     deps = [
         ":onnxruntime_lib_import",
         ":onnxruntime_lib_import_{version_name}",
+        ":onnxruntime_lib_import_1",
+        ":onnxruntime_lib_import_providers_shared",
     ],
     visibility = ["//visibility:public"],
 )
@@ -87,6 +101,18 @@ cc_import(
     includes = ["include"],
     shared_library = "lib/libonnxruntime.so.{version}",
 )
+cc_import(
+    name = "onnxruntime_lib_import_1",
+    hdrs = hdrs,
+    includes = ["include"],
+    shared_library = "lib/libonnxruntime.so.1",
+)
+cc_import(
+    name = "onnxruntime_lib_import_providers_shared",
+    hdrs = hdrs,
+    includes = ["include"],
+    shared_library = "lib/libonnxruntime_providers_shared.so",
+)
 cc_library(
     name = "onnxruntime_lib_{cpu_platform}",
     hdrs = hdrs,
@@ -95,6 +121,8 @@ cc_library(
     deps = [
         ":onnxruntime_lib_import",
         ":onnxruntime_lib_import_{version_name}",
+        ":onnxruntime_lib_import_1",
+        ":onnxruntime_lib_import_providers_shared",
     ],
     visibility = ["//visibility:public"],
 )
